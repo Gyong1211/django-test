@@ -4,6 +4,10 @@
     <div clas="container">
         <h3>{{ post.title }}</h3>
         <h4>{{ post.created_date }}</h4>
+        <form action="{% url "post_delete" pk=post.pk %}" method="post">
+            {% csrf_token %}
+            <button>포스트 삭제</button>
+        </form>
         <img src="{{ post.photo.url }}">
         <p>{{ post.content }}</p>
     </div>

@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^post/$', post_views.post_list, name='post_list'),
     url(r'^post/(?P<pk>\d+)/$', post_views.post_detail, name='post_detail'),
     url(r'^post_create/$', post_views.post_create, name='post_create'),
+    url(r'^post_delete/(?P<pk>\d+)/$', post_views.post_delete, name='post_delete'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

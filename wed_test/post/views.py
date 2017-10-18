@@ -35,3 +35,10 @@ def post_create(request):
         'form': form,
     }
     return render(request, 'post/post_create.html', context=context)
+
+
+def post_delete(request, pk):
+    if request.method == 'POST':
+        post = get_object_or_404(Post, pk=pk)
+        post.delete()
+    return redirect('post_list')
