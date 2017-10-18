@@ -22,5 +22,6 @@ from post import views as post_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^post/$', post_views.post_list, name='post_list')
+    url(r'^post/$', post_views.post_list, name='post_list'),
+    url(r'^post/(?P<pk>\d+)/$', post_views.post_detail, name='post_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
